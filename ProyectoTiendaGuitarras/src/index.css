@@ -317,6 +317,10 @@ button:not(:disabled),
   height: auto;
 }
 
+.img-fluid-40 {
+  max-width: 20%;
+  height: auto;
+}
 
 .container-xl {
   --bs-gutter-x: 1.5rem;
@@ -566,6 +570,20 @@ button:not(:disabled),
   width: 100% !important;
 }
 
+.w-60 {
+  width: 60% !important;
+  margin: auto;
+}
+
+.w-20{
+  width: 20% !important;
+  align-content: center;
+}
+
+.align-content{
+  align-content: center;
+}
+
 .justify-content-end {
   justify-content: flex-end !important;
 }
@@ -708,6 +726,11 @@ button:not(:disabled),
     justify-content: center;
 }
 
+.display-flex-center{
+    display: flex;
+    justify-content: center;
+}
+
 .box-shadow{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -725,6 +748,13 @@ button:not(:disabled),
     display: flow;
     justify-self: center;
     place-items : center;
+}
+
+.justify-self{
+  padding-top: 25px;
+  justify-self: center;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {

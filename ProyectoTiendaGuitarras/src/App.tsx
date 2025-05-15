@@ -5,6 +5,7 @@ import { cartReducer, initialState } from './reducers/cart-reducer';
 import Header from './components/Header';
 import GuitarDetail from './components/GuitarDetail';
 import Footer from './components/Footer';
+import Order from './components/Order';
 
 function App() {
   const [state, dispatch] = useReducer(cartReducer, initialState);
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home data={state.data} dispatch={dispatch}/>} />
           <Route path="/guitarras/:id" element={<GuitarDetail dispatch={dispatch}/>} />
+          <Route path="/ordenes" element={<Order cart={state.cart} dispatch={dispatch} />} />
         </Routes>
         <Footer/>
     </BrowserRouter>
