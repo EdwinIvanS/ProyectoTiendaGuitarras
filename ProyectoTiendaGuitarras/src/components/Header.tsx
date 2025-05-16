@@ -17,7 +17,7 @@ export default function Header({ cart, dispatch }: HeaderProps) {
             <a href="/">
               <img
                 className="img-fluid"
-                src="/img/logo.svg"
+                src="/img/Logo.png"
                 alt="imagen logo"
               />
             </a>

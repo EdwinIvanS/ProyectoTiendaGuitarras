@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-dark mt-5 py-5">
       <div className="container-xl">
         <p className="text-white text-center fs-4 mt-4 m-0">
-          Ecommerce Guitar - Todos los derechos Reservados
+          Ecommerce OroCuerda- Todos los derechos Reservados
         </p>
       </div>
     </footer>

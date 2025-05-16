@@ -616,7 +616,7 @@ button:not(:disabled),
 }
 
 .mt-5 {
-  margin-top: 3rem !important;
+  margin-top: 2rem !important;
 }
 
 .p-2 {
@@ -731,6 +731,17 @@ button:not(:disabled),
     justify-content: center;
 }
 
+.diplay-flex-container{
+  padding-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.diplay-flex-container img{
+  width: 15%;
+}
+
 .box-shadow{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -741,7 +752,7 @@ button:not(:disabled),
 
 .display-header{
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .display-detail{
