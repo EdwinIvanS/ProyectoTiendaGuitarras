@@ -1,14 +1,9 @@
 import React from 'react'
-import { CartActions } from '../reducers/cart-reducer';
-import { CartItem } from '../types/types';
 import Cart from './CartShopping';
+import { useCartContext } from '../context/CartContext';
 
-type HeaderProps = {
-  cart: CartItem[];
-  dispatch: React.Dispatch<CartActions>;
-};
-
-export default function Header({ cart, dispatch }: HeaderProps) { 
+export default function Header() { 
+  const { state, dispatch } = useCartContext();
   return (
     <header className="py-5 header">
       <div className="container-xl">
@@ -23,7 +18,7 @@ export default function Header({ cart, dispatch }: HeaderProps) {
             </a>
           </div>
           <nav className="col-md-6 mt-5 d-flex align-items-start justify-content-end">
-          <Cart cart={cart} dispatch={dispatch} />
+          <Cart cart={state.cart} dispatch={dispatch} />
           </nav>
         </div>
       </div>

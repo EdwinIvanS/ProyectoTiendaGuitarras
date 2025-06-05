@@ -1,13 +1,11 @@
 import React from "react";
 import Guitar from "../components/Guitar";
-import { Guitar as guitarHome } from "../types/types";
+import { useCartContext } from "../context/CartContext";
 
-type HomeProps = {
-  data: guitarHome[];
-  dispatch: React.Dispatch<any>;
-};
+export default function Home() {
 
-export default function Home({ data, dispatch }: HomeProps) {
+  const { state, dispatch } = useCartContext();
+
   return (
     <>
       <div className="diplay-flex-container">
@@ -18,7 +16,7 @@ export default function Home({ data, dispatch }: HomeProps) {
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
         <div className="display-flex mt-5">
-          {data.map((guitar) => (
+          {state.data.map((guitar) => (
             <Guitar key={guitar.id} guitar={guitar} dispatch={dispatch} />
           ))}
         </div>

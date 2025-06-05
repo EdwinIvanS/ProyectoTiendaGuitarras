@@ -2,13 +2,10 @@ import React, { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Guitar as GuitarType } from "../types/types";
 import { db } from "../data/db";
-import { CartActions } from "../reducers/cart-reducer";
+import { useCartContext } from "../context/CartContext";
 
-type GuitarDetailProps = {
-  dispatch: React.Dispatch<CartActions>;
-};
-
-export default function GuitarDetail({dispatch} : GuitarDetailProps) {
+export default function GuitarDetail() {
+  const { dispatch } = useCartContext();
   const { id } = useParams<{ id: string }>();
   const [guitar, setGuitar] = useState<GuitarType | null>(null); 
 

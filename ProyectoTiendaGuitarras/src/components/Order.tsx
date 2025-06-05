@@ -1,13 +1,8 @@
 import React, { useMemo } from "react";
-import { CartItem } from "../types/types";
-import { CartActions } from "../reducers/cart-reducer";
+import { useCartContext } from "../context/CartContext";
 
-type OrderProps = {
-  cart: CartItem[];
-  dispatch: React.Dispatch<CartActions>;
-};
-
-export default function Order({ cart, dispatch }: OrderProps) {
+export default function Order() {
+  const {state: { cart },dispatch,} = useCartContext();
   const isEmpty = useMemo(() => cart.length === 0, [cart]);
   const cartTotal = useMemo(
     () => cart.reduce((total, item) => total + item.quantity * item.price, 0),
@@ -89,7 +84,9 @@ export default function Order({ cart, dispatch }: OrderProps) {
         <span className="fw-bold">${cartTotal}</span>
       </p>
       {isEmpty ? (
-        <p className="text-center"><strong>El carrito esta vacio</strong></p>
+        <p className="text-center">
+          <strong>El carrito esta vacio</strong>
+        </p>
       ) : (
         <div className="display-flex-center">
           <button

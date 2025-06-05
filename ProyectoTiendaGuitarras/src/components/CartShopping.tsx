@@ -102,8 +102,7 @@ export default function Cart({ cart, dispatch }: CartProps) {
         {cart.length > 0 && (
           <button
             className="btn btn-dark w-100 mt-3 p-2"
-            onClick={() =>  navigate("/ordenes")              
-            }
+            onClick={() => navigate("/ordenes")}
           >
             Ver Órdenes
           </button>
