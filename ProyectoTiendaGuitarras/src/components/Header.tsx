@@ -1,8 +1,9 @@
-import React from 'react'
-import Cart from './CartShopping';
-import { useCartContext } from '../context/CartContext';
+import React from "react";
+import Cart from "./CartShopping";
+import { useCartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
-export default function Header() { 
+export default function Header() {
   const { state, dispatch } = useCartContext();
   return (
     <header className="py-5 header">
@@ -17,11 +18,21 @@ export default function Header() {
               />
             </a>
           </div>
+          <div className="col-8 col-md-3 mt-5">
+            <ul className="text-init flex-text font-size">
+              <Link to={`/mision`}>
+                <li>Misión</li>
+              </Link>
+              <Link to={`/vision`}>
+                <li>Visión</li>
+              </Link>
+            </ul>
+          </div>
           <nav className="col-md-6 mt-5 d-flex align-items-start justify-content-end">
-          <Cart cart={state.cart} dispatch={dispatch} />
+            <Cart cart={state.cart} dispatch={dispatch} />
           </nav>
         </div>
       </div>
     </header>
-  )
+  );
 }

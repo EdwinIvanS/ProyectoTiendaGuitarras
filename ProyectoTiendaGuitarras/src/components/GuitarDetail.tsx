@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom";
 import { Guitar as GuitarType } from "../types/types";
 import { db } from "../data/db";
 import { useCartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function GuitarDetail() {
   const { dispatch } = useCartContext();
   const { id } = useParams<{ id: string }>();
-  const [guitar, setGuitar] = useState<GuitarType | null>(null); 
+  const [guitar, setGuitar] = useState<GuitarType | null>(null);
 
   useEffect(() => {
     const found = db.find((g) => g.id === Number(id));
@@ -19,17 +20,19 @@ export default function GuitarDetail() {
   return (
     <div className="col-md-6 col-lg-4 my-4 display-detail box-shadow pb-2">
       <div className="col-4">
-          <img
-            className="img-fluid"
-            src={`/img/${guitar.image}.jpg`}
-            alt="imagen guitarra"
-          />
-        </div> 
-        <div className="col-8">
-          <h3 className="text-black fs-4 fw-bold text-uppercase">{guitar.name}</h3>
-          <p>{guitar.description}</p>
-          <p className="fw-black text-primary fs-3">${guitar.price}</p>
-         <button
+        <img
+          className="img-fluid"
+          src={`/img/${guitar.image}.jpg`}
+          alt="imagen guitarra"
+        />
+      </div>
+      <div className="col-8">
+        <h3 className="text-black fs-4 fw-bold text-uppercase">
+          {guitar.name}
+        </h3>
+        <p>{guitar.description}</p>
+        <p className="fw-black text-primary fs-3">${guitar.price}</p>
+        <button
           type="button"
           className="btn btn-dark w-100"
           onClick={() =>
@@ -38,6 +41,9 @@ export default function GuitarDetail() {
         >
           Agregar al Carrito
         </button>
+        <Link to={`/`} onClick={() => window.scrollTo(0, 0)}>
+          <button  className="btn btn-dark w-100 mt-2">Volver</button>
+        </Link>
       </div>
     </div>
   );

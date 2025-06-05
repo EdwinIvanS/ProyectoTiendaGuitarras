@@ -19,6 +19,7 @@ export default function Cart({ cart, dispatch }: CartProps) {
 
   return (
     <div className="carrito">
+      
       <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
       <div id="carrito" className="bg-white p-3">

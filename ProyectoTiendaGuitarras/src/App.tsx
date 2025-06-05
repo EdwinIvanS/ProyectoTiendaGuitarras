@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import GuitarDetail from "./components/GuitarDetail";
 import Footer from "./components/Footer";
 import Order from "./components/Order";
+import Mision from "./pages/Mision";
+import Vision from "./pages/Vision";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/guitarras/:id" element={<GuitarDetail />} />
           <Route path="/ordenes" element={<Order />} />
+          <Route path="/mision" element={<Mision />} />
+          <Route path="/vision" element={<Vision />} />
         </Routes>
         <Footer />
       </BrowserRouter>

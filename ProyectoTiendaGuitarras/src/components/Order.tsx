@@ -1,8 +1,12 @@
 import React, { useMemo } from "react";
 import { useCartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function Order() {
-  const {state: { cart },dispatch,} = useCartContext();
+  const {
+    state: { cart },
+    dispatch,
+  } = useCartContext();
   const isEmpty = useMemo(() => cart.length === 0, [cart]);
   const cartTotal = useMemo(
     () => cart.reduce((total, item) => total + item.quantity * item.price, 0),
@@ -84,9 +88,16 @@ export default function Order() {
         <span className="fw-bold">${cartTotal}</span>
       </p>
       {isEmpty ? (
-        <p className="text-center">
-          <strong>El carrito esta vacio</strong>
-        </p>
+        <>
+          <p className="text-center">
+            <strong>El carrito esta vacio</strong>
+          </p>
+          <div className="display-flex-center">
+            <Link to={`/`} onClick={() => window.scrollTo(0, 0)}>
+              <button className="btn btn-dark w-70 mt-3 p-2">Volver</button>
+            </Link>
+          </div>
+        </>
       ) : (
         <div className="display-flex-center">
           <button

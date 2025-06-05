@@ -385,6 +385,17 @@ button:not(:disabled),
     width: 30%;
   }
 }
+.text-init{
+    display: flex;
+    color: white;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.flex-text{
+  display: flex;
+  justify-content: space-evenly;
+}
 .table {
   --bs-table-color: var(--bs-body-color);
   --bs-table-bg: transparent;
@@ -686,6 +697,9 @@ button:not(:disabled),
   text-transform: uppercase !important;
 }
 
+.text-align-justify{
+  text-align: justify;
+}
 /* rtl:begin:remove */
 
 /* rtl:end:remove */
@@ -767,7 +781,12 @@ button:not(:disabled),
   font-size: xx-large;
   font-weight: bold;
 }
-
+.font-size{
+  font-size: x-large;
+}
+.mt-2{
+  margin-top: 10px;
+}
 @media (min-width: 768px) {
   .justify-content-md-between {
     justify-content: space-between !important;

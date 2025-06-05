@@ -12,6 +12,7 @@ export default function Home() {
         <img className="img-fluid" src="/img/ESP.png" alt="imagen logo" />
         <img className="img-fluid" src="/img/Fender.png" alt="imagen logo" />
         <img className="img-fluid" src="/img/Gibson.png" alt="imagen logo" />
+         <img className="img-fluid" src="/img/Tailor.png" alt="imagen logo" />
       </div>
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
