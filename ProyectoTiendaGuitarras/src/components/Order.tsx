@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { useCartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 export default function Order() {
   const {
@@ -12,6 +14,28 @@ export default function Order() {
     () => cart.reduce((total, item) => total + item.quantity * item.price, 0),
     [cart]
   );
+
+const handleConfirmOrder = () => {
+    Swal.fire({
+      title: '¿Confirmar Pedido?',
+      text: `Total a pagar: $${cartTotal}`,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, Confirmar!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch({ type: "clear-cart" }); 
+        Swal.fire(
+          '¡Pedido Confirmado!',
+          'Tu pedido ha sido procesado con éxito.',
+          'success'
+        );
+      }
+    });
+  };
 
   return (
     <div className="bg-white p-3">
@@ -102,7 +126,7 @@ export default function Order() {
         <div className="display-flex-center">
           <button
             className="btn btn-dark w-70 mt-3 p-2"
-            onClick={() => dispatch({ type: "clear-cart" })}
+            onClick={handleConfirmOrder}
           >
             Confirmar Pedido
           </button>
