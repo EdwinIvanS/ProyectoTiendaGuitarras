@@ -22,7 +22,7 @@ export default function Guitar({ guitar, dispatch }: GuitarProps) {
           />
         </div>        
       </Link>
-        <div className="col-8">
+        <div className="col">
           <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
           <p>{description}</p>
           <p className="fw-black text-primary fs-3">${price}</p>
