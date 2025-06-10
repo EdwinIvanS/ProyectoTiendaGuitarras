@@ -322,6 +322,11 @@ button:not(:disabled),
   height: auto;
 }
 
+.img-fluid-18 {
+  max-width: 18%;
+  height: auto;
+}
+
 .container-xl {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -586,6 +591,11 @@ button:not(:disabled),
   margin: auto;
 }
 
+.w-80 {
+  width: 80% !important;
+  margin: auto;
+}
+
 .w-20{
   width: 20% !important;
   align-content: center;
@@ -655,6 +665,10 @@ button:not(:disabled),
 
 .pt-5 {
   padding-top: 3rem !important;
+}
+
+.pt-8 {
+  padding-top: 4rem !important;
 }
 
 .pb-2{
@@ -784,6 +798,11 @@ button:not(:disabled),
 .font-size{
   font-size: x-large;
 }
+
+.font-size-small{
+  font-size: 17px;
+}
+
 .mt-2{
   margin-top: 10px;
 }

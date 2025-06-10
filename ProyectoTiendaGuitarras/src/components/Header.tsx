@@ -26,6 +26,9 @@ export default function Header() {
               <Link to={`/vision`}>
                 <li>Visión</li>
               </Link>
+              <Link to={`/historialPedidos`}>
+                <li>Historial</li>
+              </Link>
             </ul>
           </div>
           <nav className="col-md-6 mt-5 d-flex align-items-start justify-content-end">

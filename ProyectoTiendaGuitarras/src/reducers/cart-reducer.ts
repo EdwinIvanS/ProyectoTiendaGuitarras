@@ -1,4 +1,4 @@
-import { db } from "../data/db"
+import { db } from "../data/dbProducts"
 import { CartItem, Guitar } from "../types/types"
 
 
@@ -14,7 +14,7 @@ export type CartState = {
     cart: CartItem[]
 }
 
-const initialCart = () : CartItem[] => {
+const initialCart = (): CartItem[] => {
     const localStorageCart = localStorage.getItem('cart')
     return localStorageCart ? JSON.parse(localStorageCart) : []
 }
@@ -66,8 +66,8 @@ export const cartReducer = (
     }
 
     if (action.type === 'decrease-quantity') {
-        const cart = state.cart.map( item => {
-            if(item.id === action.payload.id && item.quantity > MIN_ITEMS) {
+        const cart = state.cart.map(item => {
+            if (item.id === action.payload.id && item.quantity > MIN_ITEMS) {
                 return {
                     ...item,
                     quantity: item.quantity - 1
@@ -82,8 +82,8 @@ export const cartReducer = (
     }
 
     if (action.type === 'increase-quantity') {
-        const cart = state.cart.map( item => {
-            if(item.id === action.payload.id && item.quantity < MAX_ITEMS) {
+        const cart = state.cart.map(item => {
+            if (item.id === action.payload.id && item.quantity < MAX_ITEMS) {
                 return {
                     ...item,
                     quantity: item.quantity + 1

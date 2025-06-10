@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Guitar as GuitarType } from "../types/types";
-import { db } from "../data/db";
+import { db } from "../data/dbProducts";
 import { useCartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,7 @@ export default function GuitarDetail() {
           Agregar al Carrito
         </button>
         <Link to={`/`} onClick={() => window.scrollTo(0, 0)}>
-          <button  className="btn btn-dark w-100 mt-2">Volver</button>
+          <button className="btn btn-dark w-100 mt-2">Volver</button>
         </Link>
       </div>
     </div>

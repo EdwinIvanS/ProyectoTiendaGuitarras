@@ -5,8 +5,9 @@ import Header from "./components/Header";
 import GuitarDetail from "./components/GuitarDetail";
 import Footer from "./components/Footer";
 import Order from "./components/Order";
-import Mision from "./pages/Mision";
-import Vision from "./pages/Vision";
+import Mision from "./components/Mision";
+import Vision from "./components/Vision";
+import HistoryOrders from "./components/HistoryOrders";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/ordenes" element={<Order />} />
           <Route path="/mision" element={<Mision />} />
           <Route path="/vision" element={<Vision />} />
+          <Route path="/historialPedidos" element={<HistoryOrders />} />
         </Routes>
         <Footer />
       </BrowserRouter>
