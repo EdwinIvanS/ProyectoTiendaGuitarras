@@ -7,13 +7,15 @@ export default function HistoryOrders() {
     <div className="bg-white p-3">
       <h2 className="text-center">Historial de Pedidos</h2>
       {orders.map((orders) => (
-        <>
-          <table className="w-80 table">
+      
+          <table className="w-80 table" key={orders.id}>
             <thead>
-              <div className="pt-8 font-size-small">
-                <strong>Pedido</strong>: {orders.id} <br></br>
-                <strong>Fecha Creación</strong>: {orders.createdAt}
-              </div>
+              <tr>
+                <th className="pt-8 font-size-small">
+                Pedido : {orders.id} <br></br>
+                Fecha Creación : {orders.createdAt}
+              </th>
+              </tr>
               <tr>
                 <th>Imagen</th>
                 <th>Nombre</th>
@@ -22,9 +24,9 @@ export default function HistoryOrders() {
               </tr>
             </thead>
 
-            {orders.items.map((item, i) => (
+            {orders.items.map((item) => (
               <tbody>
-                <tr key={i}>
+                <tr key={item.productId}>
                   <td>
                     <img
                       className="img-fluid-18"
@@ -45,7 +47,7 @@ export default function HistoryOrders() {
               </td>
             </tr>
           </table>
-        </>
+
       ))}
     </div>
   );
