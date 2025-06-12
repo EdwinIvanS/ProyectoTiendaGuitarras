@@ -3,7 +3,7 @@ import { Order } from "../types/types";
 export const orders: Order[] = [
     {
         id: "123e4567-e89b-12d3-a456-426614174000",
-        customerName: "Juan Pérez",
+        customerName: "Edwin Ivan Saboya",
         createdAt: "2025-05-23T12:42:30",
         status: "CREATED",
         items: [
@@ -19,7 +19,7 @@ export const orders: Order[] = [
     },
     {
         id: "78a1d5be-0664-4b21-93cb-d8da5a5fbcc7",
-        customerName: "Juan Pérez",
+        customerName: "Edwin Ivan Saboya",
         createdAt: "2025-05-23T15:16:37",
         status: "CREATED",
         items: [

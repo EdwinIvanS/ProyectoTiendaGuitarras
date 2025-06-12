@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 import { useCartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 export default function Order() {
   const {
@@ -15,23 +15,23 @@ export default function Order() {
     [cart]
   );
 
-const handleConfirmOrder = () => {
+  const handleConfirmOrder = () => {
     Swal.fire({
-      title: '¿Confirmar Pedido?',
+      title: "¿Confirmar Pedido?",
       text: `Total a pagar: $${cartTotal}`,
-      icon: 'question',
+      icon: "question",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, Confirmar!',
-      cancelButtonText: 'Cancelar'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, Confirmar!",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch({ type: "clear-cart" }); 
+        dispatch({ type: "clear-cart" });
         Swal.fire(
-          '¡Pedido Confirmado!',
-          'Tu pedido ha sido procesado con éxito.',
-          'success'
+          "¡Pedido Confirmado!",
+          "Tu pedido ha sido procesado con éxito.",
+          "success"
         );
       }
     });
