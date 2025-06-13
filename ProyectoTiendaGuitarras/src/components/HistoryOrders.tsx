@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import Swal from "sweetalert2";
 import { useOrders } from "../hooks/useOrders";
 
-export default function HistoryOrders() {
-  
-  const { orders } = useOrders({ source: "mock" });
-  //const { orders } = useOrders({ source: "api", customerName: "Edwin Ivan S" });
+export default function HistoryOrders() {  
+  //const { orders } = useOrders({ source: "mock" });
+  const { orders } = useOrders({ source: "api", customerName: "Edwin Ivan S" });
 
   useEffect(() => {
     if (orders.length === 0) {
