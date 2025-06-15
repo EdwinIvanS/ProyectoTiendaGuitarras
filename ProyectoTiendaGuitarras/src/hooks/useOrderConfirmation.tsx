@@ -33,7 +33,7 @@ export const useOrderConfirmation = (cart: any[], dispatch: Function) => {
     };
 
     try {
-      await axios.post(API_ROUTES.pedidos.create, orderPayload);
+      //await axios.post(API_ROUTES.pedidos.create, orderPayload);
       dispatch({ type: "clear-cart" });
 
       Swal.fire(
