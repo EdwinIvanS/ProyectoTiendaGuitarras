@@ -19,7 +19,6 @@ Aplicación web construida con **React + TypeScript** para la venta, gestión y 
 
 ## 📦 Instalación
 
-```bash
 # Clonar el repositorio
 git clone https://github.com/EdwinIvanS/ProyectoTiendaGuitarras.git
 cd ProyectoTiendaGuitarras
